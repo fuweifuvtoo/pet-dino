@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training">
   <meta name="twitter:description" content="PET-DINO: A universal object detector supporting both text and visual prompts with prompt-enriched training strategies for open-set object detection.">
-  <meta name="twitter:image" content="https://pet-dino.github.io/static/images/social_preview.png">
+  <meta name="twitter:image" content="https://fuweifu-vtoo.github.io/pet-dino/static/images/method_overview.png">
   <meta name="twitter:image:alt" content="PET-DINO - Research Preview">
 
   <!-- Academic/Research Specific -->
@@ -128,7 +128,7 @@
     "isAccessibleForFree": true,
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://pet-dino.github.io"
+      "@id": "https://fuweifu-vtoo.github.io/pet-dino/"
     }
   }
   </script>
@@ -197,6 +197,40 @@
               <span class="eql-cntrb"><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding author</span>
             </div>
 
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2604.00503" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/fuweifuvtoo/PET_DINO" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2604.00503" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -205,6 +239,105 @@
   </div>
 </section>
 
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Open-Set Object Detection (OSOD) enables recognition of novel categories beyond fixed classes but faces challenges in aligning text representations with complex visual concepts and the scarcity of image-text paired samples for rare categories. This results in suboptimal performance in specialized domains or with complex objects. Recent visual-prompted methods partially address these issues but often involve complex multi-modal designs and multi-stage optimizations, extending the development cycle. Additionally, effective training strategies for data-driven OSOD models remain largely unexplored. To address these challenges, we propose <strong>PET-DINO</strong>, a universal object detector supporting both text and visual prompts. Our <strong>A</strong>lignment-<strong>F</strong>riendly <strong>V</strong>isual <strong>P</strong>rompt <strong>G</strong>eneration (<strong>AFVPG</strong>) module builds upon an advanced text-prompted detector, addressing the limitations of text representation guidance and reducing the development cycle. We introduce two prompt-enriched training strategies: <strong>I</strong>ntra-<strong>B</strong>atch <strong>P</strong>arallel Prompting (<strong>IBP</strong>) at the iteration level and <strong>D</strong>ynamic <strong>M</strong>emory-<strong>D</strong>riven Prompting (<strong>DMD</strong>) at the overall training level. These strategies enable simultaneous modeling of multiple prompt routes, parallel alignment with diverse real-world usage scenarios. Comprehensive experiments demonstrate that PET-DINO exhibits competitive zero-shot object detection capabilities across various prompt-based detection protocols. These strengths can be attributable to inheritance-based philosophy and prompt-enriched training strategies, which play a critical role in building effective generic object detector.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Figures -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method Section -->
+    <h2 class="title is-4" style="text-align: left; margin-bottom: 20px;">Method</h2>
+    <figure class="figure">
+      <img src="static/images/method_overview.png" alt="Method Overview" style="width: 100%;"/>
+      <figcaption class="has-text-justified" style="margin-top: 10px;">
+        Overall architecture of PET-DINO. Input coordinates undergo a Visual Prompt Generation process, interacting with enhanced image features to obtain visual prompts. The text encoder creates text embeddings, which interact with image features in the Feature Enhancer module to produce text prompts. Both types of prompts guide the Query Selection Module, offering location priors for initial queries. These queries are then refined through decoder layers to predict objects and classifications.
+      </figcaption>
+    </figure>
+
+    <!-- AFVPG and IBP DMD - Same row, full width each -->
+    <div class="columns is-centered" style="margin-top: 40px;">
+      <div class="column is-6">
+        <figure class="figure">
+          <img src="static/images/AFVPG_feature_analysis.png" alt="AFVPG Feature Analysis" style="width: 100%;"/>
+          <figcaption class="has-text-justified" style="margin-top: 10px;">
+            Feature correlation analysis between visual prompts and instance-level image features showing the impact of AFVPG.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-6">
+        <figure class="figure">
+          <img src="static/images/IBP_DMD_tsne.png" alt="IBP DMD t-SNE" style="width: 100%;"/>
+          <figcaption class="has-text-justified" style="margin-top: 10px;">
+            t-SNE visualization of visual prompt features showing the impact of IBP and DMD.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visualization Figures - Different Background -->
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4" style="text-align: left; margin-bottom: 20px;">Visualization</h2>
+    <figure class="figure" style="text-align: center;">
+      <img src="static/images/cross.png" alt="Cross Images Visualization" style="width: 95%;"/>
+    </figure>
+    <figure class="figure" style="text-align: center;">
+      <img src="static/images/single.png" alt="Single" style="width: 95%;"/>
+    </figure>
+    <figure class="figure" style="text-align: center;">
+      <img src="static/images/multi.png" alt="Multi" style="width: 95%;"/>
+    </figure>
+  </div>
+</section>
+<!-- End Figures -->
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{fu2026petdinounifyingvisualcues,
+      title={PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training}, 
+      author={Weifu Fu and Jinyang Li and Bin-Bin Gao and Jialin Li and Yuhuan Lin and Hanqiu Deng and Wenbing Tao and Yong Liu and Chengjie Wang},
+      year={2026},
+      eprint={2604.00503},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.00503}, 
+}
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  </main>
 
   <footer class="footer">
   <div class="container">
