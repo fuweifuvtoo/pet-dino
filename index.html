@@ -173,25 +173,32 @@
       font-weight: 500;
     }
   
-    .publication-authors a,
-    .publication-authors a:link,
-    .publication-authors a:visited,
-    .publication-authors a:active {
-      color: inherit;
-      text-decoration-line: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      border-bottom: none !important;
-      box-shadow: none !important;
-    }
+  .publication-authors a,
+  .publication-authors a:link,
+  .publication-authors a:visited,
+  .publication-authors a:active {
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none !important;
+    border-bottom: 1px solid currentColor;
+    box-shadow: none !important;
+  }
   
-    .publication-authors a:hover {
-      color: inherit;
-      text-decoration-line: underline;
-      text-decoration-style: double;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
+  .publication-authors a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.25s ease;
+  }
+  
+  .publication-authors a:hover::after {
+    width: 100%;
+  }
   
     .is-size-6.publication-authors {
       font-family: 'Poppins', sans-serif !important;
@@ -223,7 +230,7 @@
             <!-- TODO: Replace with your paper title -->
             <h1 class="title is-2 publication-title"><img src="static/images/favicon.png" alt="PET-DINO Logo" style="height: 1.2em; vertical-align: middle; margin-right: 8px;">PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training</h1>
             
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors" style="font-size: 2.1rem; font-weight: 600; margin-bottom: 0.6rem;">
               <span class="author-block">
                 CVPR 2026 <span style="color: red; font-weight: 700;">Highlight 🔥</span>
               </span>
@@ -360,15 +367,15 @@
 <section class="section" style="background-color: #f5f5f5;">
   <div class="container is-max-desktop">
     <h2 class="title is-4" style="text-align: left; margin-bottom: 20px;">Visualization</h2>
-    <figure class="figure" style="text-align: center;">
-      <img src="static/images/cross.png" alt="Cross Images Visualization" style="width: 95%;"/>
-    </figure>
-    <figure class="figure" style="text-align: center;">
-      <img src="static/images/single.png" alt="Single" style="width: 95%;"/>
-    </figure>
-    <figure class="figure" style="text-align: center;">
-      <img src="static/images/multi.png" alt="Multi" style="width: 95%;"/>
-    </figure>
+      <figure class="figure" style="text-align: center; margin-bottom: 36px;">
+        <img src="static/images/cross.png" alt="Cross Images Visualization" style="width: 95%;"/>
+      </figure>
+      <figure class="figure" style="text-align: center; margin-bottom: 36px;">
+        <img src="static/images/single.png" alt="Single" style="width: 95%;"/>
+      </figure>
+      <figure class="figure" style="text-align: center; margin-bottom: 36px;">
+        <img src="static/images/multi.png" alt="Multi" style="width: 95%;"/>
+      </figure>
   </div>
 </section>
 <!-- End Figures -->
