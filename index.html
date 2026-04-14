@@ -88,10 +88,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -145,37 +141,56 @@
   }
   </script>
 
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     body,
     .publication-authors,
     .publication-authors .author-block,
     .publication-authors a {
       font-family: 'Poppins', sans-serif !important;
-      font-weight: 400;
     }
   
     h1.publication-title,
     .title.publication-title {
       font-family: 'Poppins', sans-serif !important;
-      font-weight: 600 !important;
-      font-size: 3rem;
-      letter-spacing: -0.04em;
+      font-weight: 500 !important;
+      font-size: 2.6rem;
+      letter-spacing: -0.03em;
       line-height: 1.1;
       color: #222;
     }
   
     .publication-authors {
+      font-weight: 500;
       line-height: 1.5;
       color: #333;
     }
   
+    .publication-authors .author-block,
     .publication-authors a {
+      font-weight: 500;
+    }
+  
+    .publication-authors a,
+    .publication-authors a:link,
+    .publication-authors a:visited,
+    .publication-authors a:active {
       color: inherit;
-      text-decoration: none;
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      border-bottom: none !important;
+      box-shadow: none !important;
     }
   
     .publication-authors a:hover {
-      text-decoration: underline;
+      color: inherit;
+      text-decoration-line: underline;
+      text-decoration-style: double;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
   
     .is-size-6.publication-authors {
